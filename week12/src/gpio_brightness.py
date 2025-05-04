@@ -32,8 +32,7 @@ if __name__ == "__main__":
             btn = pi.read(PIN_BTN)
 
             if btn == 0:  # 눌림 감지
-                brightness = (brightness + BRIGHTNESS_STEP) % 256
-                pi.set_PWM_dutycycle(PIN_LEDR, brightness)
+            ################ Write Codes From Here ################
                 print(f"LED Brightness: {brightness}/255")
                 time.sleep(0.2)  # 디바운싱 대기
 
