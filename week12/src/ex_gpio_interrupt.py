@@ -22,7 +22,7 @@ def change_color(pi):
     pi.write(PIN_LEDR, 0 if led_color & 0b100 else 1)
     pi.write(PIN_LEDG, 0 if led_color & 0b010 else 1)
     pi.write(PIN_LEDB, 0 if led_color & 0b001 else 1)
-    # 현재 색상 정보 출력
+    # 콘솔 출력 (색상 정보)
     print(f"[ISR] LED Color changed to {led_color:03b}")
 
 if __name__ == "__main__":
