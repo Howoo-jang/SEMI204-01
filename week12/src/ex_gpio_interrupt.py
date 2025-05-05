@@ -33,12 +33,10 @@ def myISR(gpio, level, tick):
     if btn_state == 0:
         # 색상 순환 (0~7)
         led_color = (led_color + 1) % 8
-
         # RGB 비트 조합으로 LED 제어 (0이면 ON, 1이면 OFF)
         pi.write(PIN_LEDR, 0 if led_color & 0b100 else 1)
         pi.write(PIN_LEDG, 0 if led_color & 0b010 else 1)
         pi.write(PIN_LEDB, 0 if led_color & 0b001 else 1)
-
         # 현재 색상 정보 출력
         print(f"[ISR] LED Color changed to {led_color:03b}")
 
